@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronney's Graphics Design Studio | Logo, Illustration & Print Designs</title>
+    <meta name="description" content="Professional graphic design services including logos, illustrations, and print designs. View our portfolio and contact us for your project.">
+    <meta name="keywords" content="graphic design, logo design, illustration, print design, Ronney's Graphics, portfolio">
+    <meta name="author" content="Ronney's Graphics Design Studio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ronney's Graphics Design Studio">
+    <meta property="og:description" content="Professional graphic design services including logos, illustrations, and print designs.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://ronneysgraphics.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Ronney's Graphics Design Studio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="logo">Logo</button>
+                <button class="filter-btn" data-filter="illustration">Illustration</button>
+                <button class="filter-btn" data-filter="print">Print</button>
+            </div>
+            <div class="portfolio-items">
+                <!-- Logo -->
+                <div class="portfolio-item logo">
+                    <a href="#img1"><img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Logo design project 1 by Ronney's Graphics"></a>
+                    <h3>Logo Project 1</h3>
+                </div>
+                <div class="portfolio-item logo">
+                    <a href="#img2"><img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Logo design project 2 by Ronney's Graphics"></a>
+                    <h3>Logo Project 2</h3>
+                </div>
+                <!-- Illustration -->
+                <div class="portfolio-item illustration">
+                    <a href="#img5"><img src="https://images.unsplash.com/photo-1612832020915-124d1338b12b?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Illustration project 1 by Ronney's Graphics"></a>
+                    <h3>Illustration Project 1</h3>
+                </div>
+                <div class="portfolio-item illustration">
+                    <a href="#img6"><img src="https://images.unsplash.com/photo-1593642634443-44b8f2e2f1e3?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Illustration project 2 by Ronney's Graphics"></a>
+                    <h3>Illustration Project 2</h3>
+                </div>
+                <!-- Print -->
+                <div class="portfolio-item print">
+                    <a href="#img7"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Print design project 1 by Ronney's Graphics"></a>
+                    <h3>Print Project 1</h3>
+                </div>
+                <div class="portfolio-item print">
+                    <a href="#img8"><img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?crop=entropy&cs=tinysrgb&fit=max&w=800" alt="Print design project 2 by Ronney's Graphics"></a>
+                    <h3>Print Project 2</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:braceaaron909@gmail.com">braceaaron909@gmail.com</a></p>
+            <p>Phone: <a href="tel:+233266009456">+233 266 009 456</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ronney's Graphics Design Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                items.forEach(item => {
+                    if(filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
